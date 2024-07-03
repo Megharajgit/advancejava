@@ -1,0 +1,37 @@
+import java.util.*;
+import java.util.Scanner;
+public class lab4
+{
+public static void main(String []args)
+{
+ArrayList <String> nameList= new ArrayList<>();
+Scanner S=new Scanner(System.in);
+for(int i=1;i<=3;i++)
+{
+System.out.println("enter the name"+i+":");
+String name =S.nextLine();
+nameList.add(name);
+}
+System.out.println("number of elements in the ArrayList:"+nameList.size());
+for(int i=4;i<=5;i++)
+{
+System.out.println("enter name"+i+":");
+String name=S.nextLine();
+nameList.add(name);
+}
+System.out.println("number of elements in the upadted ArrayList;"+nameList.size());
+System.out.println("names in the ArrayList:");
+for(String name:nameList)
+{
+System.out.println(name);
+}
+System.out.println("enter a name to remove:");
+String nameToRemove=S.nextLine();
+nameList.remove(nameToRemove);
+System.out.println("name in the updated ArrayList:");
+for(String name:nameList)
+{
+System.out.println(name);
+}
+}
+}
