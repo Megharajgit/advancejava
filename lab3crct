@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Lab4 {
+
+    ArrayList<String> list = new ArrayList<String>();
+
+    public void arrayDisplay() {
+        list.add("CSE");
+        list.add("ME");
+        System.out.println("ArrayList elements are:");
+        System.out.println(list);
+        System.out.println();
+    }
+
+    public void appendAtEnd() {
+        System.out.println("Enter the element to append at the end:");
+        Scanner sc = new Scanner(System.in);
+        String ele = sc.next();
+        list.add(ele);
+        System.out.println(list);
+        System.out.println();
+    }
+
+    public void insertAtPosition() {
+        System.out.println("Enter the position and element to insert:");
+        Scanner sc = new Scanner(System.in);
+        int posInd = sc.nextInt();
+        String ele = sc.next();
+        list.add(posInd, ele);
+        System.out.println(list);
+        System.out.println();
+    }
+
+    public void searchElement() {
+        System.out.println("Enter the array element to search:");
+        Scanner sc = new Scanner(System.in);
+        String arrEle = sc.next();
+        int index = list.indexOf(arrEle);
+        if (index == -1) {
+            System.out.println("Element not found");
+        } else {
+            System.out.println("Element found at index: " + index);
+        }
+    }
+
+    public void printStartingWith() {
+        System.out.println("Enter the starting character to print strings:");
+        Scanner sc = new Scanner(System.in);
+        char input = sc.next().charAt(0);
+        System.out.println("Strings starting with character '" + input + "':");
+        for (String str : list) {
+            if (str.charAt(0) == input) {
+                System.out.println(str);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Lab4 obj = new Lab4(); // Correct instantiation
+        obj.arrayDisplay();
+        obj.appendAtEnd();
+        obj.insertAtPosition();
+        obj.searchElement();
+        obj.printStartingWith();
+    }
+}
