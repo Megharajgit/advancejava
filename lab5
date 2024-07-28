@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+public class Listln{
+    public static void main(String[] args) {
+        List<String> myList=new ArrayList<>();
+        myList.add(0,"NCET");
+        myList.add(1,"CSE");
+        myList.add("DS");
+        myList.add("ISE");
+        System.out.println("list before removal:"+myList);
+        String firstElement=myList.remove(0);
+        String lastElement=myList.remove(myList.size()-1);
+        System.out.println("list after removal:"+myList);
+        System.out.println("first element removed:"+firstElement);
+        System.out.println("last element removed:"+lastElement);
+    }
+}
