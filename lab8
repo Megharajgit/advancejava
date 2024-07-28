@@ -1,0 +1,53 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+public class merge{
+    public static void main(String[] args) {
+        String inputFile1="C:\\java\\1.txt";
+        String inputFile2="C:\\java\\2.txt";
+        String outputFile="C:\\java\\3.txt";
+        try{
+            BufferedReader reader1=new BufferedReader(new FileReader(inputFile1));
+            String data1=" ";
+            String line1;
+            while((line1=reader1.readLine())!=null)
+            {
+                data1+=line1+"\n";
+            }
+            reader1.close();
+            
+            BufferedReader reader2=new BufferedReader(new FileReader(inputFile2));
+            String data2=" ";
+            String line2;
+            while((line2=reader2.readLine())!=null)
+            {
+                data2+=line2+"\n";
+            }
+            reader2.close();
+
+            String mergedData=data1+data2;
+
+            BufferedWriter writer=new BufferedWriter(new FileWriter(outputFile));
+            writer.write(mergedData);
+            writer.close();
+
+
+            BufferedReader mergReader=new BufferedReader(new FileReader(outputFile));
+            String line;
+            while((line=mergReader.readLine())!=null)
+            {
+                System.out.println(line);
+            }
+            mergReader.close();
+        }
+
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
+
+    }
+}
